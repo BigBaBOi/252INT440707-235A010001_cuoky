@@ -54,7 +54,7 @@ PcWeb/
 1. Tải toàn bộ source code về máy.
 2. Mở file `index.html` bằng trình duyệt web hoặc sử dụng tiện ích **Live Server** trên VS Code để có trải nghiệm tốt nhất.
 3. Chào mừng bạn đến với thế giới của **Precision Lab**!
-
+4. Tài khoản demo admin: 'admin@precision.lab' 'admin123';
 ---
 
 ## 📝 Đóng góp & Bản quyền
