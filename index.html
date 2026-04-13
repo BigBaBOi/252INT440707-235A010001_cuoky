@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description"
+        content="PRECISION LAB - Hardware Intelligence. Nền tảng so sánh và đánh giá linh kiện máy tính chính xác nhất. Công cụ so sánh hiệu năng, bảng xếp hạng, đánh giá từ cộng đồng.">
+    <meta name="keywords" content="so sánh CPU, đánh giá GPU, linh kiện máy tính, build PC, bảng xếp hạng hiệu năng">
+    <title>PcWeb | Precision Lab</title>
+
+    <!-- Scripts & Styles -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="assets/js/auth.js"></script>
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "PcWeb - Precision Lab",
+      "url": "https://pcweb.example.com",
+      "description": "Nền tảng so sánh và đánh giá linh kiện máy tính chuyên nghiệp.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://pcweb.example.com/pages/products.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <script src="assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body
+    class="bg-surface dark:bg-slate-950 text-on-surface dark:text-slate-100 flex flex-col min-h-screen transition-colors duration-300">
+
+    <!-- TopNavBar -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="pt-20 pb-24 px-6 lg:px-12 max-w-screen-2xl mx-auto">
+        <!-- Hero Slider Segment (Swiper) -->
+        <div class="mb-16 rounded-3xl overflow-hidden shadow-2xl bg-slate-900 border border-slate-800">
+            <div class="swiper hero-swiper h-[450px]">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1: RTX 5090 -->
+                    <div class="swiper-slide relative bg-gradient-to-r from-slate-950 to-slate-900 flex items-center px-12 lg:px-24">
+                        <div class="relative z-10 max-w-2xl">
+                            <div class="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 animate-in fade-in slide-in-from-left-4 duration-700">
+                                New Arrival 2025
+                            </div>
+                            <h2 class="text-5xl lg:text-7xl font-black font-headline tracking-tighter text-white mb-6 leading-[1.1] animate-in fade-in slide-in-from-left-8 duration-700 delay-100">
+                                RTX 5090 <br> <span class="text-blue-500">ULTIMATE BEAST</span>
+                            </h2>
+                            <p class="text-slate-400 text-lg mb-8 max-w-lg animate-in fade-in slide-in-from-left-10 duration-700 delay-200">
+                                Experience unprecedented performance with Blackwell architecture. The future of gaming is here.
+                            </p>
+                            <a href="pages/product-detail.html?id=gpu-rtx5090" class="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold text-sm transition-all group animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+                                Pre-order Now
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Intel Core Ultra -->
+                    <div class="swiper-slide relative bg-gradient-to-r from-blue-950 to-slate-900 flex items-center px-12 lg:px-24">
+                        <div class="relative z-10 max-w-2xl">
+                            <div class="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 animate-in fade-in slide-in-from-left-4 duration-700">
+                                Next-Gen Computing
+                            </div>
+                            <h2 class="text-5xl lg:text-7xl font-black font-headline tracking-tighter text-white mb-6 leading-[1.1] animate-in fade-in slide-in-from-left-8 duration-700 delay-100">
+                                INTEL <span class="text-blue-500">CORE ULTRA</span> <br> PROCESSORS
+                            </h2>
+                            <p class="text-slate-400 text-lg mb-8 max-w-lg animate-in fade-in slide-in-from-left-10 duration-700 delay-200">
+                                Series 2 is optimized for AI workloads and extreme gaming efficiency. Calibrated for the future.
+                            </p>
+                            <a href="pages/products.html?cat=processors" class="inline-flex items-center gap-3 bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 rounded-xl font-bold text-sm transition-all group animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+                                Learn More
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">info</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: AMD Ryzen 9000 -->
+                    <div class="swiper-slide relative bg-gradient-to-r from-red-950/40 to-slate-950 flex items-center px-12 lg:px-24">
+                        <div class="relative z-10 max-w-2xl">
+                            <div class="inline-flex items-center gap-2 bg-orange-500/10 text-orange-400 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 animate-in fade-in slide-in-from-left-4 duration-700">
+                                Zen 5 Architecture
+                            </div>
+                            <h2 class="text-5xl lg:text-7xl font-black font-headline tracking-tighter text-white mb-6 leading-[1.1] animate-in fade-in slide-in-from-left-8 duration-700 delay-100">
+                                RYZEN <span class="text-orange-500">9000 SERIES</span> <br> DOMINANCE
+                            </h2>
+                            <p class="text-slate-400 text-lg mb-8 max-w-lg animate-in fade-in slide-in-from-left-10 duration-700 delay-200">
+                                The world's most advanced desktop processors. Speed, efficiency, and pure performance.
+                            </p>
+                            <a href="pages/products.html?cat=processors" class="inline-flex items-center gap-3 bg-orange-600 hover:bg-orange-500 text-white px-8 py-4 rounded-xl font-bold text-sm transition-all group animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+                                Explore Ryzen
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">bolt</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Precision Benchmarks -->
+                    <div class="swiper-slide relative bg-gradient-to-r from-indigo-950/40 to-slate-950 flex items-center px-12 lg:px-24">
+                        <div class="relative z-10 max-w-2xl">
+                            <div class="inline-flex items-center gap-2 bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 animate-in fade-in slide-in-from-left-4 duration-700">
+                                Hardware Intelligence
+                            </div>
+                            <h2 class="text-5xl lg:text-7xl font-black font-headline tracking-tighter text-white mb-6 leading-[1.1] animate-in fade-in slide-in-from-left-8 duration-700 delay-100">
+                                PRECISION <span class="text-indigo-500">COMPARISON</span> <br> ENGINE
+                            </h2>
+                            <p class="text-slate-400 text-lg mb-8 max-w-lg animate-in fade-in slide-in-from-left-10 duration-700 delay-200">
+                                Compare components side-by-side with verified benchmark data. Make informed decisions.
+                            </p>
+                            <a href="pages/compare.html" class="inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-xl font-bold text-sm transition-all group animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+                                Start Comparing
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">compare_arrows</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Swiper Controls -->
+                <div class="swiper-pagination !bottom-8"></div>
+                <div class="swiper-button-next !text-white/20 hover:!text-white transition-colors !right-8"></div>
+                <div class="swiper-button-prev !text-white/20 hover:!text-white transition-colors !left-8"></div>
+            </div>
+        </div>
+        <!-- Hero Section -->
+        <section class="relative min-h-[819px] flex items-center overflow-hidden bg-surface dark:bg-slate-950">
+            <div class="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 z-10">
+                    <div
+                        class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-sm text-xs font-bold tracking-widest uppercase mb-6">
+                        <span class="material-symbols-outlined text-sm"
+                            style="font-variation-settings: 'FILL' 1;">electric_bolt</span>
+                        Next-Gen Hardware Insights
+                    </div>
+                    <h1 class="text-6xl lg:text-8xl font-bold tracking-tighter leading-[0.9] text-on-surface mb-6">
+                        Build Smarter,<br /><span class="text-primary">Not Harder</span>
+                    </h1>
+                    <p class="text-xl text-on-surface-variant dark:text-slate-400 max-w-xl mb-10 leading-relaxed">
+                        In-depth reviews, rankings, and comparisons of the latest PC components. Calibrated for
+                        enthusiasts and professionals alike.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="pages/products.html"
+                            class="hero-gradient text-white px-8 py-4 rounded-lg font-bold text-sm tracking-widest uppercase shadow-[0_0_20px_rgba(0,65,200,0.3)] hover:scale-105 transition-transform active:opacity-80 inline-block">
+                            Start Comparing Now
+                        </a>
+                        <a href="#featured"
+                            class="bg-transparent border border-outline-variant/20 text-primary dark:text-blue-400 px-8 py-4 rounded-lg font-bold text-sm tracking-widest uppercase hover:bg-surface-container-low dark:hover:bg-slate-800 transition-colors inline-block">
+                            Latest Rankings
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative aspect-square">
+                    <div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl"></div>
+                    <!-- Placeholder image since the source uses external URL -->
+                    <img alt="Future Tech"
+                        class="w-full h-full object-cover rounded-xl shadow-2xl relative z-10 border border-white/10"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpBAB93WDQUtUVX6XGLk4bbmKwRPfFDFG9kmmJcBDvg-D2FZvvmN8NZZ1vxSouXoiuimrHp0tKvfJrWHPtjhRCXwnIqSf2-83rvqjva_9ApfADWtf20YGSRuGMX4YkQLFoZxbu6X-P6NXzwm2qRspzWnTST160T-Hjk4vmb-6XILWyzA9vUoXQdLuYZvFpwpDjSSrwx_C3L0zRRs56vISoFbbNRLHjIe0mNudr4yCjw0lLgPh2cFbUeWaemhd_yF6ECCwfn0ADTfM" />
+                    <div
+                        class="absolute -bottom-6 -left-6 bg-surface-container-lowest dark:bg-slate-800 p-6 rounded-lg shadow-xl z-20 border border-outline-variant/10 dark:border-slate-700">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-primary-container rounded-sm flex items-center justify-center text-white">
+                                <span class="material-symbols-outlined">analytics</span>
+                            </div>
+                            <div>
+                                <div class="text-[10px] uppercase tracking-widest font-bold text-outline">Real-time
+                                    Bench</div>
+                                <div class="text-xl font-bold font-headline">99.8% ACCURACY</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-0 pointer-events-none opacity-[0.03]"
+                style="background-image: radial-gradient(#000 0.5px, transparent 0.5px); background-size: 24px 24px;">
+            </div>
+        </section>
+
+        <!-- Featured Reviews -->
+        <section id="featured"
+            class="py-24 bg-surface-container-low dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="flex items-end justify-between mb-12">
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight mb-2 text-on-surface dark:text-slate-100">⭐
+                            Editor's Choice: Top Picks of the Month</h2>
+                        <div class="h-1 w-24 bg-primary"></div>
+                    </div>
+                    <a class="text-primary font-bold text-sm tracking-widest uppercase flex items-center gap-2 hover:gap-3 transition-all"
+                        href="pages/products.html">
+                        View Archive <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Ported from source -->
+                    <div
+                        class="group bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/5 transition-all hover:bg-white/40 hover:backdrop-blur-xl hover:shadow-2xl">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa1KDJsX5FUfTbW54ydi2pPa5mZG6Rrlcj1qbedyPURZGp_CkMxFaepxHQsSsUs2cZtpSVbU3LfAqDE1LGbxgyBBI9ruVLRLPSozAfd1QxYbIBOLIE6oFHpqgYOWQRffcTW07j99IMYDE_YOhNCliJ3OLH45nOjNfd1fFa2UYymJRvEec9G6LZJ_-NGYZCj4W08jLhov9H57vypPZ0Vgo4ynX7_BGAt16nwseBmRJ221EUx_KilMmH_qiPJipXjeVdATgn13RcUCk" />
+                        </div>
+                        <div class="p-8">
+                            <div class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary mb-2">GPU
+                                Performance</div>
+                            <h3
+                                class="text-xl font-bold mb-4 group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">
+                                NVIDIA RTX 4090 Titanium</h3>
+                            <p class="text-on-surface-variant dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Unprecedented 4K performance benchmarks. The new king of thermal efficiency and frame
+                                consistency.
+                            </p>
+                            <button
+                                class="w-full py-3 bg-surface-container-high dark:bg-slate-700 text-on-surface dark:text-slate-100 font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-primary dark:hover:bg-blue-600 hover:text-white transition-all">
+                                Read Full Analysis
+                            </button>
+                        </div>
+                    </div>
+                    <!-- ... other cards ... -->
+                    <div
+                        class="group bg-surface-container-lowest dark:bg-slate-800 rounded-lg overflow-hidden border border-outline-variant/5 dark:border-slate-700 transition-all hover:bg-white/40 dark:hover:bg-slate-700/40 hover:backdrop-blur-xl hover:shadow-2xl">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4VBWlrY6keGUGz0n4bHIDqbbyxsCTeVVI2YVvKH5UVoFOqokLvKf6JZU_Xomhh8ahW15gvZgQFwzx7kU6L3bWqpGXgnAoTqQXuwdEJSQOZtsfWMwP_FUdfIEsoL22vSwk5M8O0WDPnl_JyAS5ynellhoR6IFv2rvkFVy3kBWPbiGY4y6ymET0vuxpBxofPLr2vuEttMx7R2KGsxBvJ2D2ygocUYoO0HUhnWpho0DVzaFi3IlpNmJXI4Q3pPeYA8PlvxxRvPrysv8" />
+                        </div>
+                        <div class="p-8">
+                            <div class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary mb-2">CPU
+                                Architecture</div>
+                            <h3
+                                class="text-xl font-bold mb-4 group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">
+                                AMD Ryzen 9 7950X3D</h3>
+                            <p class="text-on-surface-variant dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Massive L3 cache benefits gaming workflows. A specialized chip that delivers where it
+                                matters most.
+                            </p>
+                            <button
+                                class="w-full py-3 bg-surface-container-high dark:bg-slate-700 text-on-surface dark:text-slate-100 font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-primary dark:hover:bg-blue-600 hover:text-white transition-all">
+                                Read Full Analysis
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-surface-container-lowest dark:bg-slate-800 rounded-lg overflow-hidden border border-outline-variant/5 dark:border-slate-700 transition-all hover:bg-white/40 dark:hover:bg-slate-700/40 hover:backdrop-blur-xl hover:shadow-2xl">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOU6RqmgwF0oFg64OWOmC6MjgeL8mh6fUDX929QQ4NVMHTG0jtJC56hjgyWt2_bUG8MDYNrO_CMK34qsK4pKlr-WfbMpd_V0NQof3S0Z7E1ayH_OchSHBXc76w4zI3oPGAs4CUDqouUXanaGFclwsEl-am860cFwCuiwdRPN7gS7VnzxLU_Fpbl5Adpf5p8xEH5OYncCwUUQvRNeVEF15LGVLnlq3yRvjzziKnYW3Y3stklcjrr0mgw3WvfYVzFs7_L5d1sLunUgQ" />
+                        </div>
+                        <div class="p-8">
+                            <div class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary mb-2">Memory Speed
+                            </div>
+                            <h3
+                                class="text-xl font-bold mb-4 group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">
+                                Corsair Dominator Titanium</h3>
+                            <p class="text-on-surface-variant dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                DDR5-8000 speeds achieved with remarkable stability. Clean aesthetics meet raw
+                                engineering power.
+                            </p>
+                            <button
+                                class="w-full py-3 bg-surface-container-high dark:bg-slate-700 text-on-surface dark:text-slate-100 font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-primary dark:hover:bg-blue-600 hover:text-white transition-all">
+                                Read Full Analysis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Components (Scrollable Carousel) -->
+        <section class="py-24 bg-surface dark:bg-slate-950">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="flex items-center gap-4 mb-12">
+                    <span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
+                    <h2 class="text-3xl font-bold tracking-tight uppercase italic">New on the Market</h2>
+                </div>
+                <div class="flex overflow-x-auto gap-6 pb-8 snap-x no-scrollbar">
+                    <!-- Ported from source -->
+                    <div class="min-w-[240px] snap-start">
+                        <div
+                            class="bg-surface-container-low dark:bg-slate-900 aspect-square rounded-lg mb-4 flex items-center justify-center overflow-hidden border border-outline-variant/10 dark:border-slate-800">
+                            <img class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqUNbi-WiMr2PYH5GfC2trtRUxbwrq7ce33eBhbl9vnRZaxgT7zDNqY1RnD2ZIfLtlCetI4ex6H2x3tRixO-w-FSA3jFeMzRd2xMaT7L0XlrBRJ7sUPUQBHIWBFtx-OwSQ3FlBLCWXxIGtZrj4D70AroVCmTVoVTvnk8OBSSS7PNt-Edn8-b8sSYjp8opxKvpy6_F0JkmCve2yqkTwhByTEHZOgTQ6a2DzQ2-z4gs4-OPHMV7JRHk1JSKsNfpuiaAOuKcsW1RBvmE" />
+                        </div>
+                        <h4 class="font-bold text-sm mb-1 uppercase tracking-tight">UltraGear 27GR95QE</h4>
+                        <p class="text-[10px] text-outline font-bold uppercase tracking-widest">Released: Oct 2024</p>
+                    </div>
+                    <!-- ... other items ... -->
+                    <div class="min-w-[240px] snap-start">
+                        <div
+                            class="bg-surface-container-low dark:bg-slate-900 aspect-square rounded-lg mb-4 flex items-center justify-center overflow-hidden border border-outline-variant/10 dark:border-slate-800">
+                            <img class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtyUZ_CXUmT-NbBRBZMsXujx03Ps1BjxTBIxnk9aKRB2_wRgs3RYJ_1DQYp8zhwh5QqzrWLO-bDps08rRS36NTe6rGEUUX0CGMPddusYOg4WY0L_wUXQZFj31uYYZSl8wI94TDPS6a04zbtEpOwWWllWfQ9wE9L2ExO0e4sPtmAV5HUzWd1tHRhhZkBOkQ21eS6NzCLINKcn2AvkyFuk1WKz05e_IBjlXukWsjDSmZRmAnJEA1Fd5a2CFvCsPRIeDY3QPJBg46Yh0" />
+                        </div>
+                        <h4 class="font-bold text-sm mb-1 uppercase tracking-tight">Logitech G Pro X 3</h4>
+                        <p class="text-[10px] text-outline font-bold uppercase tracking-widest">Released: Nov 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Top Rated -->
+        <section class="py-24 bg-surface-container-low dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                    <div class="lg:col-span-4">
+                        <div class="sticky top-24">
+                            <div class="flex items-center gap-4 mb-6">
+                                <span class="material-symbols-outlined text-primary text-4xl">military_tech</span>
+                                <h2 class="text-4xl font-bold tracking-tighter">Community<br />Top Rated</h2>
+                            </div>
+                            <p class="text-on-surface-variant dark:text-slate-400 mb-8 leading-relaxed">
+                                Real-world data from our active community of builders. Aggregated scores based on
+                                longevity, performance, and value.
+                            </p>
+                            <div class="bg-primary/5 p-6 rounded-lg border border-primary/10">
+                                <div class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Total
+                                    Benchmarks</div>
+                                <div class="text-3xl font-bold font-headline">1,248,392+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-8">
+                        <div
+                            class="bg-surface-container-lowest dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-surface-container-high/50 dark:bg-slate-950/50">
+                                        <th
+                                            class="px-6 py-4 text-[10px] uppercase tracking-widest font-black text-on-surface-variant">
+                                            Rank</th>
+                                        <th
+                                            class="px-6 py-4 text-[10px] uppercase tracking-widest font-black text-on-surface-variant">
+                                            Component</th>
+                                        <th
+                                            class="px-6 py-4 text-[10px] uppercase tracking-widest font-black text-on-surface-variant">
+                                            Category</th>
+                                        <th
+                                            class="px-6 py-4 text-[10px] uppercase tracking-widest font-black text-on-surface-variant dark:text-slate-400 text-right">
+                                            Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-primary/5 transition-colors group">
+                                        <td
+                                            class="px-6 py-6 border-b border-outline-variant/10 text-xl font-bold font-headline text-primary">
+                                            01</td>
+                                        <td class="px-6 py-6 border-b border-outline-variant/10">
+                                            <div class="font-bold">Intel Core i9-14900K</div>
+                                            <div class="text-xs text-outline dark:text-slate-500">LGA 1700 Architecture
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-6 border-b border-outline-variant/10">
+                                            <span
+                                                class="bg-surface-container-high dark:bg-slate-700 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-on-surface dark:text-slate-300">CPU</span>
+                                        </td>
+                                        <td class="px-6 py-6 border-b border-outline-variant/10 text-right">
+                                            <div class="flex items-center justify-end gap-2">
+                                                <div
+                                                    class="h-1.5 w-16 bg-surface-container-highest rounded-full overflow-hidden">
+                                                    <div class="h-full bg-primary w-[98%]"></div>
+                                                </div>
+                                                <span class="font-bold">9.8</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- ... other rows ... -->
+                                    <tr class="hover:bg-primary/5 transition-colors group">
+                                        <td
+                                            class="px-6 py-6 border-b border-outline-variant/10 text-xl font-bold font-headline text-primary">
+                                            02</td>
+                                        <td class="px-6 py-6 border-b border-outline-variant/10">
+                                            <div class="font-bold">ASUS ROG Swift PG27AQDM</div>
+                                            <div class="text-xs text-outline dark:text-slate-500">OLED Gaming Panel
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-6 border-b border-outline-variant/10">
+                                            <span
+                                                class="bg-surface-container-high dark:bg-slate-700 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-on-surface dark:text-slate-300">Monitor</span>
+                                        </td>
+                                        <td class="px-6 py-6 border-b border-outline-variant/10 text-right">
+                                            <div class="flex items-center justify-end gap-2">
+                                                <div
+                                                    class="h-1.5 w-16 bg-surface-container-highest rounded-full overflow-hidden">
+                                                    <div class="h-full bg-primary w-[96%]"></div>
+                                                </div>
+                                                <span class="font-bold">9.6</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="p-6 text-center">
+                                <button
+                                    class="text-xs font-bold uppercase tracking-widest text-primary hover:underline">Download
+                                    Detailed Benchmarking CSV</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- JS Logic -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/db.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

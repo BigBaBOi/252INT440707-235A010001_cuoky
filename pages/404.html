@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>404 Not Found | PRECISION LAB</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script src="../assets/js/tailwind-config.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-surface dark:bg-slate-950 text-on-surface dark:text-slate-100 min-h-screen flex flex-col circuit-bg font-body transition-colors duration-300">
+
+    <!-- TopNavBar -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="flex-grow flex flex-col items-center justify-center px-6 pt-24 pb-12 overflow-hidden relative">
+        <div class="absolute inset-0 pointer-events-none opacity-20 flex items-center justify-center">
+            <div class="w-[800px] h-[800px] border border-blue-500/10 rounded-full flex items-center justify-center">
+                <div class="w-[600px] h-[600px] border border-blue-500/20 rounded-full flex items-center justify-center">
+                    <div class="w-[400px] h-[400px] border border-blue-500/30 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-4xl w-full text-center z-10">
+            <div class="relative inline-block mb-8">
+                <span class="text-[12rem] md:text-[20rem] font-black leading-none tracking-tighter text-slate-200 select-none opacity-50 font-headline">404</span>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-full h-full max-w-md max-h-[300px] overflow-hidden rounded-lg">
+                        <img class="w-full h-full object-cover mix-blend-multiply filter grayscale contrast-125 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwcqBVmfxTPaokBb8G5s9FptFAmVCGS4ur1lqpY78r6DteFwYvetF21ge3WHmzqnyavo0MgBTP1ZoKcHQWQEdLaVY2upvleILi2V1Jy6rNEFnCYX-PINaK3mw4YpiHdZ6Qxhgyjk3YkVondhzYbtZznemqtqT1hzJ1Qdx4PI5Z71EPQHNX05x_keyvkk18dxCzWSjyPZFgd2xkfDWrz2IO4oC-4AA3OBkFiYO9GZyFyRgDZFIrDZfte02jIpM0l39VwFsG7aquCFk"/>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4 max-w-2xl mx-auto">
+                <h1 data-i18n="error_404_title" class="text-3xl md:text-5xl font-black uppercase tracking-tight text-on-surface font-headline">ERROR 404: Component Not Found</h1>
+                <p data-i18n="error_404_desc" class="text-slate-500 font-medium text-lg leading-relaxed px-4">It seems the path you are looking for has been decommissioned or never existed in our database.</p>
+            </div>
+            <div class="flex justify-center mt-12">
+                <a class="group bg-primary text-white px-10 py-4 rounded-lg shadow-xl hover:scale-[1.02] flex items-center gap-3 transition-all uppercase font-bold tracking-widest text-xs" href="../index.html">
+                    <span data-i18n="btn_back_home">Back to Homepage</span>
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/db.js"></script>
+    <script src="../assets/js/i18n.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

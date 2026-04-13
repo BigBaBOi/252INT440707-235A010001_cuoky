@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>GPU Comparison Engine | PRECISION LAB</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script src="../assets/js/tailwind-config.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-surface dark:bg-slate-950 font-body text-on-surface dark:text-slate-100 transition-colors duration-300 min-h-screen">
+
+<!-- TopNavBar -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="pt-32 pb-16 px-8 max-w-7xl mx-auto w-full">
+        <header class="mb-12">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-6">
+                <div class="max-w-2xl">
+                    <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-[10px] font-bold uppercase tracking-widest mb-4">Precision Benchmarks v4.2</span>
+                    <h1 data-i18n="compare_title" class="text-5xl md:text-6xl font-headline font-bold tracking-tight text-on-surface mb-4 leading-none text-primary">GPU Comparison Engine</h1>
+                    <p data-i18n="compare_desc" class="text-slate-500 text-lg leading-relaxed font-light">Direct technical analysis between industry-leading silicon architectures. Data calibrated for high-performance computing.</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dynamic Comparison Grid -->
+        <section id="comparison-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
+            <!-- Injected by comparison.js -->
+        </section>
+
+        <!-- Dynamic Specs Table -->
+        <section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden mb-16 shadow-sm">
+            <div class="p-8 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-800/50">
+                <h3 data-i18n="tech_specs" class="font-headline text-xl font-bold uppercase tracking-tight">Technical Specifications</h3>
+                <div class="flex gap-4">
+                    <div class="flex items-center gap-2"><div class="w-2 h-2 bg-primary rounded-full"></div><span data-i18n="baseline" class="text-[10px] font-bold uppercase text-slate-400">Baseline</span></div>
+                    <div class="flex items-center gap-2"><div class="w-2 h-2 bg-tertiary rounded-full"></div><span data-i18n="target" class="text-[10px] font-bold uppercase text-slate-400">Target</span></div>
+                </div>
+            </div>
+            
+            <div id="specs-container" class="overflow-x-auto">
+                <!-- JavaScript will inject the grid here -->
+                <div id="specs-grid" class="min-w-[800px] lg:min-w-0 border-collapse">
+                    <!-- Dynamic Columns -->
+                </div>
+            </div>
+        </section>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/db.js"></script>
+    <script src="../assets/js/i18n.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/comparison.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

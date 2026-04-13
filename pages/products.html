@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Hardware Directory | PRECISION LAB</title>
+    
+    <!-- Scripts & Styles -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script src="../assets/js/tailwind-config.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-surface dark:bg-slate-950 text-on-surface dark:text-slate-100 selection:bg-primary selection:text-on-primary transition-colors duration-300">
+<!-- TopNavBar -->
+    <div id="navbar-placeholder"></div>
+<!-- Removed redundant header content -->
+<!-- End of header replacement -->
+
+<main class="pt-32 pb-24 px-6 lg:px-12 max-w-screen-2xl mx-auto">
+    <header class="mb-16">
+        <h1 data-i18n="hardware_directory" class="text-5xl md:text-6xl font-bold tracking-tighter mb-4 text-on-surface">Hardware Directory</h1>
+        <p data-i18n="hardware_desc" class="text-xl text-on-surface-variant font-body max-w-2xl leading-relaxed">
+            Browse and filter our database of high-performance components. Engineered metrics for professional evaluation.
+        </p>
+    </header>
+
+    <div class="flex flex-col lg:flex-row gap-12">
+        <!-- Sidebar Filters -->
+        <aside class="w-full lg:w-72 flex-shrink-0">
+            <div class="sticky top-24 space-y-10">
+                <div>
+                    <h3 class="text-xs font-black uppercase tracking-widest text-primary mb-6">Category</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center group cursor-pointer">
+                            <input id="filter-processors" class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary category-filter" type="checkbox" value="processors"/>
+                            <span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Processors</span>
+                        </label>
+                        <label class="flex items-center group cursor-pointer">
+                            <input id="filter-graphics" class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary category-filter" type="checkbox" value="graphics"/>
+                            <span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Graphics</span>
+                        </label>
+                        <label class="flex items-center group cursor-pointer">
+                            <input id="filter-motherboards" class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary category-filter" type="checkbox" value="motherboards"/>
+                            <span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Motherboards</span>
+                        </label>
+                        <label class="flex items-center group cursor-pointer">
+                            <input id="filter-memory" class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary category-filter" type="checkbox" value="memory"/>
+                            <span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Memory (RAM)</span>
+                        </label>
+                        <label class="flex items-center group cursor-pointer">
+                            <input id="filter-storage" class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary category-filter" type="checkbox" value="storage"/>
+                            <span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Storage (SSD/HDD)</span>
+                        </label>
+                        <label class="flex items-center group cursor-pointer">
+                            <input id="filter-psu" class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary category-filter" type="checkbox" value="psu"/>
+                            <span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Power Supply</span>
+                        </label>
+                        <label class="flex items-center group cursor-pointer">
+                            <input id="filter-case" class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary category-filter" type="checkbox" value="case"/>
+                            <span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Chassis/Case</span>
+                        </label>
+                        <label class="flex items-center group cursor-pointer">
+                            <input id="filter-monitor" class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary category-filter" type="checkbox" value="monitor"/>
+                            <span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Monitors</span>
+                        </label>
+                        <label class="flex items-center group cursor-pointer">
+                            <input id="filter-peripheral" class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary category-filter" type="checkbox" value="peripheral"/>
+                            <span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Peripherals</span>
+                        </label>
+                </div>
+                <!-- Price Range -->
+                <div>
+                    <h3 class="text-xs font-black uppercase tracking-widest text-primary mb-6">Price Range</h3>
+                    <div class="px-2">
+                        <input id="price-range" class="w-full h-1 bg-surface-container-highest appearance-none cursor-pointer accent-primary" max="2500" min="0" type="range" value="2500"/>
+                        <div class="flex justify-between mt-4 text-[10px] font-bold text-outline uppercase tracking-tighter">
+                            <span>$0</span>
+                            <span id="price-display">Max: $2500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="flex-grow">
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                <!-- Populated by JS -->
+            </div>
+            </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-16 flex justify-center items-center space-x-2">
+                <button class="w-10 h-10 flex items-center justify-center bg-surface-container-low text-on-surface hover:bg-primary hover:text-on-primary transition-colors">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button class="w-10 h-10 flex items-center justify-center bg-primary text-on-primary font-bold text-xs">01</button>
+                <button class="w-10 h-10 flex items-center justify-center bg-surface-container-low text-on-surface hover:bg-primary hover:text-on-primary transition-colors font-bold text-xs">02</button>
+                <button class="w-10 h-10 flex items-center justify-center bg-surface-container-low text-on-surface hover:bg-primary hover:text-on-primary transition-colors">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+        </section>
+    </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="../assets/js/db.js"></script>
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

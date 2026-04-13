@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Manage Reviews | PRECISION LAB</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script src="../assets/js/tailwind-config.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-surface dark:bg-slate-950 font-body text-on-surface dark:text-slate-100 transition-colors duration-300">
+
+    <!-- TopNavBar -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="flex min-h-screen pt-16">
+        <!-- Sidebar -->
+        <aside class="hidden lg:flex flex-col w-64 border-r border-slate-200 bg-slate-50 p-6 space-y-2">
+            <h2 class="text-blue-700 font-bold text-xs uppercase tracking-widest mb-4 font-headline">Operations</h2>
+            <a href="admin-dashboard.html" class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-blue-600 transition-all font-bold"><span class="material-symbols-outlined">dashboard</span> Dashboard</a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 bg-white text-blue-700 rounded-lg shadow-sm font-bold"><span class="material-symbols-outlined">rate_review</span> Reviews</a>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8 lg:p-12">
+            <header class="mb-10">
+                <h1 class="text-4xl font-bold font-headline tracking-tighter text-on-surface uppercase">Review Moderation</h1>
+                <p class="text-slate-500 mt-2">Moderate community feedback and performance testimonials.</p>
+            </header>
+
+            <div id="reviews-container" class="space-y-4">
+                <!-- reviews will be injected here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/reviews.js"></script>
+    <script>
+        function renderReviews() {
+            const container = document.getElementById('reviews-container');
+            const reviews = getPendingReviews();
+
+            if (reviews.length === 0) {
+                container.innerHTML = `
+                    <div class="py-20 text-center">
+                        <span class="material-symbols-outlined text-6xl text-slate-200 mb-4">check_circle</span>
+                        <p class="text-slate-400 font-bold">All reviews moderated. Great job!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = reviews.map(r => `
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between shadow-sm animate-in fade-in slide-in-from-bottom-2 duration-300" data-id="${r.id}">
+                    <div class="flex items-center gap-4 mb-4 md:mb-0">
+                        <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/40 rounded-full flex items-center justify-center text-blue-700 dark:text-blue-300 font-bold">${sanitizeHTML(r.avatar)}</div>
+                        <div>
+                            <div class="font-bold text-slate-800 dark:text-slate-200">${sanitizeHTML(r.user)}</div>
+                            <div class="text-xs text-slate-400">on ${sanitizeHTML(r.product)} • ${sanitizeHTML(r.date)}</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 px-0 md:px-8 mb-4 md:mb-0">
+                        <p class="text-sm text-slate-600 dark:text-slate-400 font-body">"${sanitizeHTML(r.content)}"</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="handleAction(${r.id}, 'approve')" class="flex-1 md:flex-none bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 px-6 py-2.5 rounded text-[10px] font-black uppercase tracking-widest hover:bg-emerald-200 transition-colors">Approve</button>
+                        <button onclick="handleAction(${r.id}, 'delete')" class="flex-1 md:flex-none bg-red-100 dark:bg-red-900/40 text-red-800 dark:text-red-300 px-6 py-2.5 rounded text-[10px] font-black uppercase tracking-widest hover:bg-red-200 transition-colors">Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function handleAction(id, type) {
+            const success = type === 'approve' ? approveReview(id) : deleteReview(id);
+            if (success) {
+                const el = document.querySelector(`[data-id="${id}"]`);
+                el.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    renderReviews();
+                }, 300);
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', renderReviews);
+    </script>
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/db.js"></script>
+    <script src="../assets/js/i18n.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

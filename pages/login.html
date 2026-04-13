@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Login | PRECISION LAB</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script src="../assets/js/tailwind-config.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-surface dark:bg-slate-950 text-on-surface dark:text-slate-100 font-body min-h-screen flex flex-col transition-colors duration-300">
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="pt-24 lg:pt-32 max-w-7xl mx-auto px-8 min-h-screen flex items-center justify-center">
+        <div class="w-full max-w-md bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-2xl animate-in fade-in zoom-in duration-500">
+            <div class="text-center mb-8">
+                <h1 data-i18n="login_title" class="text-3xl font-headline font-bold text-slate-900 dark:text-white mb-2">Login to Precision Lab</h1>
+                <p data-i18n="login_subtitle" class="text-xs text-slate-400 font-medium leading-relaxed">Access your hardware evaluation dashboard and saved comparisons.</p>
+            </div>
+
+            <form id="login-form" class="space-y-4">
+                <div class="space-y-1">
+                    <label data-i18n="email_label" class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Email Address</label>
+                    <input required class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 outline-none transition-all" name="email" type="email"/>
+                </div>
+                <div class="space-y-1">
+                    <label data-i18n="password_label" class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Password</label>
+                    <input required class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 outline-none transition-all" name="password" type="password"/>
+                </div>
+                <button data-i18n="btn_login" class="w-full bg-slate-900 dark:bg-primary text-white py-4 rounded-xl font-headline font-black text-xs tracking-widest uppercase hover:opacity-90 transition-all shadow-xl active:scale-95 mt-4" type="submit">
+                    Login
+                </button>
+            </form>
+
+            <div class="mt-8 pt-6 border-t border-slate-50 dark:border-slate-800 text-center">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                    <span data-i18n="no_account">No account?</span> <a class="text-primary hover:underline" data-i18n="menu_register" href="registration.html">Register</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/db.js"></script>
+    <script src="../assets/js/i18n.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        const loginForm = document.getElementById('login-form');
+        if (loginForm) {
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = loginForm.querySelector('[name="email"]').value;
+                const password = loginForm.querySelector('[name="password"]').value;
+                
+                // Create error element if not exists
+                let errorEl = document.getElementById('errorMessage');
+                if (!errorEl) {
+                    errorEl = document.createElement('div');
+                    errorEl.id = 'errorMessage';
+                    errorEl.className = 'text-red-500 text-[10px] font-bold mt-2 hidden';
+                    loginForm.prepend(errorEl);
+                }
+
+                const result = login(email, password);
+                if (result.success) {
+                    if (result.role === 'admin') {
+                        window.location.href = 'admin-dashboard.html';
+                    } else {
+                        window.location.href = '../index.html';
+                    }
+                } else {
+                    errorEl.textContent = result.message;
+                    errorEl.classList.remove('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

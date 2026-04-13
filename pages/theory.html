@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Hardware Theory | PRECISION LAB</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script src="../assets/js/tailwind-config.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-surface dark:bg-slate-950 text-on-surface dark:text-slate-100 font-body min-h-screen transition-colors duration-300">
+
+<!-- TopNavBar -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+        <header class="mb-16">
+            <div data-i18n="theory_kb" class="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-3 py-1 rounded-sm text-[10px] font-bold tracking-widest uppercase mb-4">
+                Knowledge Base
+            </div>
+            <h1 data-i18n="theory_title" class="text-5xl font-bold font-headline tracking-tighter text-on-surface">Hardware Theory & Methodology</h1>
+            <p data-i18n="theory_desc" class="text-xl text-slate-500 mt-4 max-w-2xl leading-relaxed">
+                Documentation on how we test, calibrate, and evaluate the latest PC components. Based on industry standards and peer-reviewed benchmarks.
+            </p>
+        </header>
+
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2 space-y-12">
+                <article class="prose prose-slate max-w-none">
+                    <h2 data-i18n="theory_gpu" class="text-3xl font-bold font-headline mb-6 text-primary">01. GPU Benchmarking Protocol</h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Our GPU testing suite involves 25 different titles across 1080p, 1440p, and 4K resolutions. We measure average FPS, 1% lows, and 0.1% lows to ensure frame-time consistency. All cards are tested in an open-air test bench with a controlled ambient temperature of 21°C.
+                    </p>
+                    <div class="bg-surface-container p-6 border-l-4 border-primary italic text-slate-700">
+                        "Reliability starts with consistent environmental variables. We use industrial-grade sensors to monitor power draw directly from the PCIe slot."
+                    </div>
+                </article>
+
+                <article class="prose prose-slate max-w-none">
+                    <h2 data-i18n="theory_cpu" class="text-3xl font-bold font-headline mb-6 text-primary">02. CPU Thermal Management</h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Thermal throttling metrics are recorded during 30-minute stress tests in Cinebench R23. We utilize high-precision liquid coolers to determine the absolute ceiling of silicon performance before heat becomes a limiting factor.
+                    </p>
+                </article>
+            </div>
+
+            <aside class="space-y-8">
+                <div class="bg-primary text-white p-8 rounded-xl shadow-xl">
+                    <h3 data-i18n="ref_materials" class="text-xl font-bold font-headline mb-4 uppercase">Reference Materials</h3>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><span class="material-symbols-outlined text-sm">description</span> White Paper 2024</a></li>
+                        <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><span class="material-symbols-outlined text-sm">description</span> VRAM Efficiency Study</a></li>
+                        <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><span class="material-symbols-outlined text-sm">description</span> PCIe 5.0 Throughput Log</a></li>
+                    </ul>
+                </div>
+                <div class="border border-slate-200 p-8 rounded-xl">
+                    <h3 data-i18n="latest_updates" class="text-lg font-bold font-headline mb-4 text-slate-900">Latest Updates</h3>
+                    <div class="space-y-6">
+                        <div class="border-b border-slate-100 pb-4">
+                            <div class="text-[10px] font-bold text-primary uppercase">Mar 12, 2026</div>
+                            <div class="font-bold text-sm mt-1">Updated ray-tracing methodology for RTX 50-series prep.</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-bold text-primary uppercase">Feb 28, 2026</div>
+                            <div class="font-bold text-sm mt-1">New L3 cache performance metrics added to CPU database.</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/db.js"></script>
+    <script src="../assets/js/i18n.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

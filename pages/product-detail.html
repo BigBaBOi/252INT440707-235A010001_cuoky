@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NVIDIA RTX 4090 Titanium Review | PRECISION LAB</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script src="../assets/js/tailwind-config.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-surface dark:bg-slate-950 font-body text-on-surface dark:text-slate-100 transition-colors duration-300">
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="pt-24 lg:pt-32 max-w-7xl mx-auto px-8 min-h-screen">
+        <a href="products.html" class="inline-flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-primary transition-colors mb-8 group">
+            <span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+            BACK TO PRODUCTS
+        </a>
+
+        <!-- Product Hero Section -->
+        <section id="product-hero" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div class="lg:col-span-7 bg-slate-50 dark:bg-slate-900/50 rounded-2xl overflow-hidden relative group aspect-[4/3] flex items-center justify-center p-12 border border-slate-100 dark:border-slate-800">
+                <img id="product-img" alt="Product Image" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" src=""/>
+                <div class="absolute top-6 left-6">
+                    <div id="product-badge" class="bg-primary px-3 py-1 text-[10px] font-black text-white uppercase tracking-widest shadow-xl">High Performance</div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 flex flex-col space-y-6">
+                <div>
+                    <span id="product-brand" class="text-primary font-headline font-black tracking-widest text-xs uppercase mb-2 block">LOADING...</span>
+                    <h1 id="product-name" class="text-4xl lg:text-5xl font-headline font-bold text-slate-900 dark:text-white tracking-tighter leading-tight">--</h1>
+                </div>
+                <p id="product-desc" class="text-slate-500 dark:text-slate-400 text-base leading-relaxed font-body">
+                    --
+                </p>
+                <div class="flex items-center space-x-8 py-4">
+                    <div class="flex flex-col">
+                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Manufacturer MSRP</span>
+                        <span id="product-price" class="text-4xl font-headline font-black text-primary">$0.00</span>
+                    </div>
+                </div>
+                <div class="flex gap-4 pt-4">
+                    <button id="add-to-compare-btn" data-i18n="btn_compare" class="flex-1 bg-slate-900 dark:bg-primary text-white px-8 py-4 rounded-xl font-headline font-black text-xs tracking-widest uppercase hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-xl active:scale-95">
+                        ADD TO COMPARE <span class="material-symbols-outlined text-sm">compare_arrows</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specs Table -->
+        <section class="mb-24 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+            <h2 class="text-2xl font-headline font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-4">
+                TECHNICAL DATA SHEET
+                <div class="h-px flex-1 bg-slate-100 dark:bg-slate-800"></div>
+            </h2>
+            <div id="specs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Specs injected here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 bg-slate-50 dark:bg-slate-950 border-t border-slate-100 dark:border-slate-900">
+        <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+            <div>PRECISION LAB | LABORATORY ACCREDITED DATA</div>
+            <div>© 2026 Precision Lab. ALL RIGHTS RESERVED.</div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/db.js"></script>
+    <script src="../assets/js/i18n.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('id');
+
+            if (!productId) {
+                window.location.href = 'products.html';
+                return;
+            }
+
+            const product = PRODUCTS.find(p => p.id === productId);
+
+            if (!product) {
+                window.location.href = '404.html';
+                return;
+            }
+
+            const displayName = (currentLang === LANGUAGES.VI && product.name_vi) ? product.name_vi : product.name;
+            const displayDesc = (currentLang === LANGUAGES.VI && product.desc_vi) ? product.desc_vi : product.desc;
+
+            // Update UI
+            document.title = `${displayName} - PRECISION LAB`;
+            document.getElementById('product-name').textContent = displayName;
+            document.getElementById('product-brand').textContent = `${product.brand}`;
+            document.getElementById('product-desc').textContent = displayDesc;
+            document.getElementById('product-price').textContent = `$${product.msrp.toLocaleString()}`;
+            document.getElementById('product-img').src = product.image;
+            document.getElementById('product-img').alt = displayName;
+
+            const specs = [
+                { label: t('spec_arch'), val: product.architecture, icon: 'architecture' },
+                { label: t('spec_power'), val: `${product.cores.toLocaleString()} ${product.core_type}`, icon: 'memory' },
+                { label: t('spec_mem'), val: `${product.memory}GB ${product.memory_type}`, icon: 'reorder' },
+                { label: t('spec_tdp'), val: `${product.tdp}W TDP`, icon: 'bolt' }
+            ];
+
+            const specsGrid = document.getElementById('specs-grid');
+            specsGrid.innerHTML = specs.map(s => `
+                <div class="p-6 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary text-xl">${s.icon}</span>
+                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">${s.label}</span>
+                    </div>
+                    <span class="text-lg font-bold text-slate-900 dark:text-slate-100">${s.val}</span>
+                </div>
+            `).join('');
+
+            // Add to Compare logic
+            document.getElementById('add-to-compare-btn').addEventListener('click', () => {
+                let compareIds = JSON.parse(localStorage.getItem('pcweb_compare_ids') || '[]');
+                if (!compareIds.includes(productId)) {
+                    if (compareIds.length >= 4) compareIds.shift(); // Remove oldest to make room
+                    compareIds.push(productId);
+                }
+                localStorage.setItem('pcweb_compare_ids', JSON.stringify(compareIds));
+                window.location.href = 'compare.html';
+            });
+        });
+    </script>
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/db.js"></script>
+    <script src="../assets/js/i18n.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

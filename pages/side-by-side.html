@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Side-by-Side Comparison | PRECISION LAB</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script src="../assets/js/tailwind-config.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-surface dark:bg-slate-950 font-body text-on-surface dark:text-slate-100 transition-colors duration-300 min-h-screen">
+
+    <!-- TopNavBar -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="pt-32 pb-16 px-8 max-w-7xl mx-auto w-full">
+        <header class="mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface mb-2 font-headline uppercase">Side-by-Side Comparison</h1>
+            <p class="text-slate-500 max-w-2xl font-medium">Calibrated benchmarking for high-performance hardware modules. Select components below to evaluate performance deltas.</p>
+        </header>
+
+        <section class="bg-slate-50 dark:bg-slate-900 p-8 rounded-xl mb-12 relative overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-widest text-primary font-headline">Component 1</label>
+                    <select id="sbs-select-1" class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 font-medium focus:ring-primary">
+                        <!-- Populated by JS -->
+                    </select>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-widest text-primary font-headline">Component 2</label>
+                    <select id="sbs-select-2" class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 font-medium focus:ring-primary">
+                        <!-- Populated by JS -->
+                    </select>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-widest text-primary font-headline">Component 3</label>
+                    <select id="sbs-select-3" class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 font-medium focus:ring-primary">
+                        <!-- Populated by JS -->
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compact Comparison Table -->
+        <section class="mb-16">
+            <div class="overflow-x-auto rounded-xl border border-slate-100 dark:border-slate-800">
+                <table class="w-full text-left border-collapse bg-white dark:bg-slate-900">
+                    <thead>
+                        <tr class="bg-slate-50 dark:bg-slate-950">
+                            <th class="p-6 font-headline uppercase tracking-widest text-[10px] font-bold text-slate-400 w-1/4">Technical Metric</th>
+                            <th id="h-name-1" class="p-6 font-headline text-lg font-bold text-primary">--</th>
+                            <th id="h-name-2" class="p-6 font-headline text-lg font-bold text-primary">--</th>
+                            <th id="h-name-3" class="p-6 font-headline text-lg font-bold text-primary">--</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                        <tr>
+                            <td class="p-6 font-bold text-[10px] text-slate-400 uppercase tracking-wider">Visual Module</td>
+                            <td class="p-6"><img id="h-img-1" class="w-32 h-20 object-contain rounded shadow-sm border dark:border-slate-800" src=""/></td>
+                            <td class="p-6"><img id="h-img-2" class="w-32 h-20 object-contain rounded shadow-sm border dark:border-slate-800" src=""/></td>
+                            <td class="p-6"><img id="h-img-3" class="w-32 h-20 object-contain rounded shadow-sm border dark:border-slate-800" src=""/></td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold text-[10px] text-slate-400 uppercase tracking-wider">Compute Cores</td>
+                            <td id="val-cores-1" class="p-6 font-bold">--</td>
+                            <td id="val-cores-2" class="p-6 font-bold">--</td>
+                            <td id="val-cores-3" class="p-6 font-bold">--</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold text-[10px] text-slate-400 uppercase tracking-wider">Memory Config</td>
+                            <td id="val-memory-1" class="p-6 font-bold">--</td>
+                            <td id="val-memory-2" class="p-6 font-bold">--</td>
+                            <td id="val-memory-3" class="p-6 font-bold">--</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold text-[10px] text-slate-400 uppercase tracking-wider">Thermal (TDP)</td>
+                            <td id="val-tdp-1" class="p-6 font-bold">--</td>
+                            <td id="val-tdp-2" class="p-6 font-bold">--</td>
+                            <td id="val-tdp-3" class="p-6 font-bold">--</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold text-[10px] text-slate-400 uppercase tracking-wider">Launch Price</td>
+                            <td id="val-msrp-1" class="p-6 font-bold text-primary">--</td>
+                            <td id="val-msrp-2" class="p-6 font-bold text-primary">--</td>
+                            <td id="val-msrp-3" class="p-6 font-bold text-primary">--</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/db.js"></script>
+    <script src="../assets/js/i18n.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/comparison.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
